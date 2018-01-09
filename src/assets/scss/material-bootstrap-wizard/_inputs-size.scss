@@ -66,7 +66,6 @@ output {
   }
 }
 
-
 // Static form control text
 //
 // Apply class to a `p` element to make any string of text align with labels in
@@ -79,7 +78,6 @@ output {
   min-height: ($mdb-input-line-height-computed + $mdb-input-font-size-base);
 }
 
-
 // Form control sizing
 //
 // Relative text size, padding, and border-radii changes for form controls. For
@@ -88,7 +86,7 @@ output {
 
 // mixin pulled from bootstrap and altered for less/sass compatibility with sass parent hack.
 //  bootstrap-sass has this one, but we would have to then convert it back to less.  chicken meet egg.
-@mixin input-size($parent, $mdb-input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius){
+@mixin input-size($parent, $mdb-input-height, $padding-vertical, $padding-horizontal, $font-size, $line-height, $border-radius) {
 
   #{$parent} {
     height: $mdb-input-height;
@@ -109,8 +107,6 @@ output {
   }
 }
 
-
-
 // Form control sizing
 //
 // Build on `.form-control` with modifier classes to decrease or increase the
@@ -121,6 +117,7 @@ output {
 .input-sm {
   @include input-size(unquote(".input-sm"), $mdb-input-height-small, $mdb-input-padding-small-vertical, $mdb-input-padding-small-horizontal, $mdb-input-font-size-small, $mdb-input-line-height-small, $mdb-input-border-radius-small);
 }
+
 .form-group-sm {
   .form-control {
     height: $mdb-input-height-small;
@@ -148,6 +145,7 @@ output {
 .input-lg {
   @include input-size(unquote(".input-lg"), $mdb-input-height-large, $mdb-input-padding-large-vertical, $mdb-input-padding-large-horizontal, $mdb-input-font-size-large, $mdb-input-line-height-large, $mdb-input-border-radius-large);
 }
+
 .form-group-lg {
   .form-control {
     height: $mdb-input-height-large;
@@ -171,7 +169,6 @@ output {
     line-height: $mdb-input-line-height-large;
   }
 }
-
 
 .form-horizontal {
 
@@ -198,7 +195,6 @@ output {
       padding-top: ($mdb-input-padding-base-vertical + 1); // Default padding plus a border
     }
   }
-
 
   // Form group sizes
   //
