@@ -1,0 +1,11 @@
+<div *ngFor="let item of data" class="{{item.class}}">
+  <div class="choice"
+       [ngClass]="{active: choice === item.value}"
+       (click)="selectChoice(item.value)"
+       [attr.disabled]="disabled">
+    <div class="icon">
+      <i class="material-icons">{{item.icon}}</i>
+    </div>
+    <h6>{{item.label}}</h6>
+  </div>
+</div>

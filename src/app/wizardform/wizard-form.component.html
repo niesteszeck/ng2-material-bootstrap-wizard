@@ -1,0 +1,45 @@
+<div class="wizard-header">
+  <h3 class="wizard-title"> {{title}} </h3>
+  <h5>{{subTitle}}</h5>
+</div>
+<div class="wizard-navigation">
+  <ul class="nav nav-pills" #navPillsContainer>
+    <li *ngFor="let step of getAllSteps(); let index"
+        #liElements
+        [ngStyle]="{'width': liWidth}"
+        [attr.hidden]="step.isHidden ? true: null">
+      <a (click)="goToStep(step)">{{step.title}}</a>
+    </li>
+  </ul>
+  <div class="moving-tab"
+       [ngStyle]="getMovingTabStyle()">
+    {{movingTabTitle}}
+  </div>
+</div>
+<div class="tab-content">
+  <ng-content></ng-content>
+</div>
+<div class="wizard-footer">
+  <div class="pull-left">
+    <button type="button" class="btn btn-default" (click)="previous()"
+            [hidden]="!hasPrevStep || !activeStep.showPrev">
+        <span class="btn-label"><i
+          class="material-icons">keyboard_arrow_left</i></span>
+      {{previousBtnText}}
+    </button>
+  </div>
+  <div class="pull-right">
+    <button type="button" class="btn btn-default" (click)="next()"
+            [hidden]="!hasNextStep || !activeStep.showNext">
+        <span class="btn-label"><i
+          class="material-icons">keyboard_arrow_right</i></span>
+      {{nextBtnText}}
+    </button>
+    <button type="submit" class="btn btn-primary" (click)="onComplete()"
+            [hidden]="hasNextStep">
+                <span class="btn-label"><i
+                  class="material-icons">check</i></span>
+      {{doneBtnText}}
+    </button>
+  </div>
+</div>
