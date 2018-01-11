@@ -1,8 +1,3 @@
-/*
-* Based on https://github.com/maiyaporn/angular2-wizard
-* and https://github.com/creativetimofficial/bootstrap-wizard
- */
-
 import {
   AfterContentInit,
   AfterViewInit,
