@@ -2,6 +2,10 @@
 - [angular2-wizard](https://github.com/maiyaporn/angular2-wizard)
 - [material-bootstrap-wizard](https://github.com/creativetimofficial/material-bootstrap-wizard)
 
+## changelog
+- v0.0.1 first Release
+- v0.0.2 fix issue related to return promise class #1
+
 # Angular 2 Material-Bootstrap-Wizard
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 1.5.0.
