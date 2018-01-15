@@ -81,7 +81,7 @@ export class WizardFormComponent
   public static updatePicturePreview(event: any, previewElement: any): Promise<File> {
     const reader: FileReader = new FileReader();
     const fileList: FileList = event.target.files;
-    const loadPromise = new Promise((resolve, reject) => {
+    const loadPromise = new Promise<File>((resolve, reject) => {
       if (fileList.length > 0) {
         const file: File = fileList[0];
         reader.readAsDataURL(file);
