@@ -5,6 +5,9 @@
 ## changelog
 - v0.0.1 first Release
 - v0.0.2 fix issue related to return promise class #1
+- v0.0.3 
+  - Fix issue related to evaluate if input is empty
+  - Add reset to wizard, to reset activeStep
 
 # Angular 2 Material-Bootstrap-Wizard
 
