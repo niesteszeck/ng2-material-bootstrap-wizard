@@ -2,6 +2,7 @@ import {BrowserModule} from '@angular/platform-browser';
 import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
 import {NgModule} from '@angular/core';
 import {RouterModule} from '@angular/router';
+import {ReactiveFormsModule} from '@angular/forms';
 import {
   MatAutocompleteModule,
   MatButtonModule,
@@ -36,11 +37,14 @@ import {
   MatStepperModule,
 } from '@angular/material';
 
+import {WizardFormModule} from './wizardform/wizard-form.module';
+
 import {AppComponent} from './app.component';
 import {AppRoutes} from './app.routing';
 import {DemoBuildProfileComponent} from './demo/build-profile.component';
-import {WizardFormModule} from './wizardform/wizard-form.module';
-import {ReactiveFormsModule} from '@angular/forms';
+import {DemoBuildProfileWizardComponent} from './demo/build-profile-wizard.component';
+import {DemoBuildProfileWizardModalComponent} from './demo/build-profile-modal.component';
+
 
 @NgModule({
   exports: [
@@ -84,6 +88,8 @@ export class MaterialModule {
   declarations: [
     AppComponent,
     DemoBuildProfileComponent,
+    DemoBuildProfileWizardComponent,
+    DemoBuildProfileWizardModalComponent
   ],
   imports: [
     BrowserModule,

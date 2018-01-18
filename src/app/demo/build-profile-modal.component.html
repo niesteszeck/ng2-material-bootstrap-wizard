@@ -1,0 +1,19 @@
+<div #modal class="modal fade" tabindex="-1" role="dialog">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header" style="border-bottom: 0px;">
+        <button type="button" class="close" aria-label="Close"
+                (click)="hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body wizard-container">
+        <div class="card wizard-card" data-color="orange">
+          <app-demo-build-profile-wizard
+            (submit)="onSubmit()"></app-demo-build-profile-wizard>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
