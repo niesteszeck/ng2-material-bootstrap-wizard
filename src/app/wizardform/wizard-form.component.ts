@@ -102,6 +102,16 @@ export class WizardFormComponent
               private el: ElementRef) {
   }
 
+  public resetActive() {
+    this.wizardSteps.forEach((step, index) => {
+      if (index === 0) {
+        step.isActive = true;
+      } else {
+        step.isActive = false;
+      }
+    });
+  }
+
   ngAfterContentInit() {
     this.wizardSteps.forEach(step => {
       this._steps.push(step);
