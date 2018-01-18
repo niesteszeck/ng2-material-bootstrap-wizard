@@ -75,7 +75,7 @@ export class WizardFormComponent
 
   private static fieldIsEmpty(form: FormGroup, field: string) {
     const component = form.get(field);
-    return component ? component.value === '' : false;
+    return component && component.value ? component.value === '' : true;
   }
 
   public static updatePicturePreview(event: any, previewElement: any): Promise<File> {
