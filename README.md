@@ -8,6 +8,9 @@
 - v0.0.3 
   - Fix issue related to evaluate if input is empty
   - Add reset to wizard, to reset activeStep
+- v0.0.4 Fix undefined propagateChange
+  - Reworked the solution, 'cause it actually brakes required validator with 
+  empty ('') initial value.
 
 # Angular 2 Material-Bootstrap-Wizard
 
