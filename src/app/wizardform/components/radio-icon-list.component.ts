@@ -31,7 +31,7 @@ export interface Data {
 })
 export class WizardFormRadioIconListInputComponent implements ControlValueAccessor, Validator {
 
-  private _choice: any;
+  private _choice: any = '';
   private propagateValidator: (value: any) => void;
   private propagateChange: (value: any) => void;
   private propagateTouch: (value: any) => void;
@@ -53,9 +53,7 @@ export class WizardFormRadioIconListInputComponent implements ControlValueAccess
   }
 
   set choice(value: any) {
-    if (!this._choice) {
-      this._choice = value;
-    } else if (this._choice !== value) {
+    if (this._choice !== value) {
       this._choice = value;
       this.propagateChange(this.choice);
     }
