@@ -55,7 +55,9 @@ export class WizardFormRadioIconListInputComponent implements ControlValueAccess
   set choice(value: any) {
     if (this._choice !== value) {
       this._choice = value;
-      this.propagateChange(this.choice);
+      if (this.propagateChange) {
+        this.propagateChange(this.choice);
+      }
     }
   }
 
