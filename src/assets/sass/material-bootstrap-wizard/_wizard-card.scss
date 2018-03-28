@@ -1,5 +1,6 @@
 .wizard-card {
   min-height: 410px;
+  display: inline-block;
   @include shadow-16dp();
 
   .picture-container {
@@ -166,4 +167,17 @@
     margin: 0;
   }
 
+}
+
+.modal-content {
+  .modal-body {
+    &.wizard-container {
+      padding: 0px;
+    }
+
+    .wizard-card {
+      margin: 0px;
+      box-shadow: none;
+    }
+  }
 }

@@ -4,176 +4,24 @@
     <div class="row">
       <div class="col-sm-8 col-sm-offset-2">
         <div class="wizard-container">
-          <wi-form class="card wizard-card"
-                   data-color="orange"
-                   title="Demo Angular 2 Material Wizard Form"
-                   subTitle="Ready for Angular 2+"
-                   [formGroup]="profileForm"
-                   (submit)="onSubmit($event)"
-                   style="display: inline-block;">
-            <wi-step title="Type of Profile"
-                     formGroupName="type"
-                     class="tab-content">
-              <div class="row">
-                <wi-radio-icon-list
-                  class="form-group"
-                  name="type"
-                  [data]="profileTypeOptions"
-                  formControlName="type"
-                  [ngClass]="displayBootstrapClass('type.type')"
-                  [attr.disabled]="profileForm.controls['type'].value.type!==''">
-                </wi-radio-icon-list>
-              </div>
-            </wi-step>
-            <wi-step title="About" formGroupName="aboutPerson"
-                     [hidden]="profileForm.controls['type'].value.type!=='Person'"
-                     class="tab-content">
-              <h4 class="info-text"> Let's start with the basic
-                information</h4>
-              <div class="col-sm-4 col-sm-offset-1">
-                <div class="picture-container">
-                  <div class="picture">
-                    <img [src]="wizardPictureUrl"
-                         class="picture-src"
-                         [@pictureChange]="wizardPictureUrlState"
-                         #wizardPicturePreview/>
-                    <input type="file"
-                           (change)="profilePictureRead($event,wizardPicturePreview)"
-                           formControlName="profilePicture">
-                  </div>
-                  <h6>Choose Picture</h6>
-                </div>
-              </div>
-              <div class="col-sm-6">
-                <div class="input-group">
-													<span class="input-group-addon">
-														<i class="material-icons">face</i>
-													</span>
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('aboutPerson.name')">
-                    <label class="control-label">First Name
-                      <small>(required)</small>
-                    </label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="name">
-                  </div>
-                </div>
-                <div class="input-group">
-													<span class="input-group-addon">
-														<i class="material-icons">record_voice_over</i>
-													</span>
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('aboutPerson.lastName')">
-                    <label class="control-label">Last Name
-                      <small>(required)</small>
-                    </label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="lastName">
-                  </div>
-                </div>
-              </div>
-              <div class="col-sm-10 col-sm-offset-1">
-                <div class="input-group">
-													<span class="input-group-addon">
-														<i class="material-icons">email</i>
-													</span>
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('aboutPerson.email')">
-                    <label class="control-label">Email
-                      <small>(required)</small>
-                    </label>
-                    <input class="form-control"
-                           type="email"
-                           formControlName="email">
-                  </div>
-                </div>
-              </div>
-            </wi-step>
-            <wi-step title="About" formGroupName="aboutBusiness"
-                     [hidden]="profileForm.controls['type'].value.type!=='Business'"
-                     class="tab-content">
-              <div class="row">
-                <div class="col-sm-6 col-sm-offset-1">
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('aboutBusiness.name')">
-                    <label class="control-label">Name</label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="name">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-10 col-sm-offset-1">
-                  <mat-form-field>
-                    <mat-select placeholder="Legal Representative"
-                                formControlName="legalRepresentative">
-                      <mat-option
-                        *ngFor="let legalRepresentative of legalRepresentatives"
-                        [value]="legalRepresentative">
-                        {{legalRepresentative}}
-                      </mat-option>
-                    </mat-select>
-                  </mat-form-field>
-                </div>
-              </div>
-            </wi-step>
-            <wi-step title="About" formGroupName="aboutDummy"
-                     [hidden]="profileForm.controls['type'].value.type!==''"
-                     class="tab-content">
-            </wi-step>
-            <wi-step title="Address"
-                     formGroupName="address"
-                     class="tab-content">
-              <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('address.street')">
-                    <label class="control-label">Street</label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="street">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-4 col-sm-offset-2">
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('address.number')">
-                    <label class="control-label">Number</label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="number">
-                  </div>
-                </div>
-                <div class="col-sm-4">
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('address.extension')">
-                    <label class="control-label">Of/Dpto</label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="extension">
-                  </div>
-                </div>
-              </div>
-              <div class="row">
-                <div class="col-sm-8 col-sm-offset-2">
-                  <div class="form-group label-floating"
-                       [ngClass]="displayBootstrapClass('address.city')">
-                    <label class="control-label">City</label>
-                    <input class="form-control"
-                           type="text"
-                           formControlName="city">
-                  </div>
-                </div>
-              </div>
-            </wi-step>
-          </wi-form>
+          <div class="card wizard-card" data-color="orange">
+            <app-demo-build-profile-wizard></app-demo-build-profile-wizard>
+          </div>
         </div>
       </div>
     </div>
+    <div class="row" style="padding-top: 40px">
+      <div class="col-sm-8 col-sm-offset-2">
+        <div class="card text-center">
+          <div class="card-body">
+            <button class="btn btn-info" (click)="openModal()">
+              Open wizard in modal mode
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <app-demo-build-profile-modal></app-demo-build-profile-modal>
   </div>
 </div>
 
